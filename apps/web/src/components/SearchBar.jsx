@@ -15,3 +15,4 @@ const SearchBar = ({ recherche, onRecherche }) => {
 };
 
 export default SearchBar;
+// Composant SearchBar — Ndeye Khoudia
