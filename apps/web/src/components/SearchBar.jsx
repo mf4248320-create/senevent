@@ -8,7 +8,7 @@ const SearchBar = ({ recherche, onRecherche }) => {
         type="text"
         placeholder="Rechercher un événement..."
         value={recherche}
-        onChange={(e) => onRecherche(e.target.value)}
+        onChange={e => onRecherche(e.target.value)}
       />
     </div>
   );
