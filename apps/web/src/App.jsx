@@ -14,7 +14,7 @@ const App = () => {
     setChargement(true);
     setErreur(null); // On efface l'erreur précédente avant de réessayer
     try {
-      // ⚠️ Note pour le test d'erreur : remplacer temporairement par "/evenements-faux.json"
+      // URL normale de succès
       const reponse = await fetch("/evenements.json");
 
       // Vérification explicite du statut HTTP (gère les erreurs 404, 500)
@@ -31,15 +31,24 @@ const App = () => {
     }
   };
 
-  // Déclenchement automatique au montage du composant
+  // Déclenchement automatique au montage du composant (Étape 1)
   useEffect(() => {
     charger();
   }, []);
 
-  // Logique de filtrage en temps réel
+  // 💡 LOGIQUE DE FILTRAGE : Placée AVANT l'effet du titre pour que `evenementsFiltres` soit accessible
   const evenementsFiltres = evenements.filter((ev) =>
     ev.titre.toLowerCase().includes(recherche.toLowerCase())
   );
+
+  // 🚀 ÉTAPE 3 : Synchroniser le titre de l'onglet du navigateur avec le compteur
+  useEffect(() => {
+    if (evenementsFiltres.length > 0) {
+      document.title = `(${evenementsFiltres.length}) SenEvent`; // ex: (5) SenEvent
+    } else {
+      document.title = "SenEvent"; // Si aucun résultat ne correspond
+    }
+  }, [evenementsFiltres.length]); // S'exécute uniquement si la longueur change 
 
   return (
     <div className={styles.container}>
