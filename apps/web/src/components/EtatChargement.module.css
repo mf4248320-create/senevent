@@ -1,0 +1,22 @@
+.chargement {
+    text-align: center;
+    color: #0056b3;
+    font-weight: bold;
+    font-style: italic;
+    padding: 2rem;
+    animation: clignoter 1.5s infinite ease-in-out;
+}
+
+@keyframes clignoter {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

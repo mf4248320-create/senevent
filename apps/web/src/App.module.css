@@ -1,13 +1,24 @@
-.container {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: sans-serif;
+.compteur {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
 }
 
-.titre {
-  color: #1a3a5c;
-  margin-bottom: 1rem;
+.message {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.erreur {
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #a01a1a;
+  text-align: center;
 }
 
 .bouton {
@@ -30,8 +41,16 @@
   opacity: 0.6;
 }
 
-.compteur {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 0.8rem 0;
+.erreur button {
+  margin-top: 0.5rem;
+  background-color: #a01a1a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.erreur button:hover {
+  background-color: #7d1414;
 }
