@@ -35,3 +35,9 @@
 .erreur button {
   margin-top: 0.5rem;
 }
+.messageVide {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 1rem;
+}
